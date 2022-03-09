@@ -121,15 +121,80 @@ function creaCarta(obj) {
 	let divCard = document.createElement('div');
 	divCard.classList.add('card');
 	divCard.innerHTML = `
-            <div class="icona"><i class="${obj.prefix}solid ${obj.prefix}${obj.name}"></i></div>
+            <div class="icona"><i class="${obj.family} ${obj.prefix}${obj.name}" style="color:${obj.color}"></i></div>
             <h5 class="titolo">${obj.name}</h5>
 	`
 	divContainer.append(divCard);
 }
 
+for (const element in arrayIcone) {
+	creaCarta(arrayIcone[element]);
+}
 
-for (let index = 0; index < arrayIcone.length; index++) {
 
-	creaCarta(arrayIcone[index]);
+const selezione = document.getElementById('select');
+selezione.addEventListener('change', cambioSelezione);
+
+
+function cambioSelezione() {
+
+	let valoreSelezionato = selezione.value;
+
+
+	if (valoreSelezionato == 'all') {
+		divContainer.innerHTML = '';
+		console.log('all');
+		for (const element in arrayIcone) {
+			creaCarta(arrayIcone[element]);
+		}
+
+	} else if (valoreSelezionato == 'animal') {
+		divContainer.innerHTML = '';
+		console.log('animals');
+		const arrayIconeFiltrate = arrayIcone.filter((iconArgoment) => {
+			if (iconArgoment.type == 'animal') {
+				return true;
+			}
+		})
+
+		for (const element in arrayIconeFiltrate) {
+			creaCarta(arrayIconeFiltrate[element])
+		}
+
+		console.log(arrayIconeFiltrate);
+
+	} else if (valoreSelezionato == 'vegetable') {
+		divContainer.innerHTML = '';
+		console.log('vegetable');
+		const arrayIconeFiltrate = arrayIcone.filter((iconArgoment) => {
+			if (iconArgoment.type == 'vegetable') {
+				return true;
+			}
+		})
+
+		for (const element in arrayIconeFiltrate) {
+			creaCarta(arrayIconeFiltrate[element])
+		}
+
+		console.log(arrayIconeFiltrate);
+
+
+	} else {
+		divContainer.innerHTML = '';
+		console.log('user');
+		const arrayIconeFiltrate = arrayIcone.filter((iconArgoment) => {
+			if (iconArgoment.type == 'user') {
+				return true;
+			}
+		})
+
+		for (const element in arrayIconeFiltrate) {
+			creaCarta(arrayIconeFiltrate[element])
+		}
+
+		console.log(arrayIconeFiltrate);
+
+
+	}
 
 }

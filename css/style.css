@@ -27,6 +27,7 @@ main {
     height: 84vh;
     background-color: lightgray;
     display: flex;
+    align-content: flex-start;
     flex-wrap: wrap;
     gap: 50px;
     padding: 25px;
