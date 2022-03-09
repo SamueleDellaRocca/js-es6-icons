@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    height: 8vh;
+    color: blue;
+}
+
+nav {
+    height: 8vh;
+    background-color: blue;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+#label {
+    margin-right: 10px;
+}
+
+main {
+    height: 84vh;
+    background-color: lightgray;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding: 25px;
+}
+
+.card {
+    width: 250px;
+    height: 100px;
+    border-radius: 15px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
