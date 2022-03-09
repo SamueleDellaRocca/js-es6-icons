@@ -151,8 +151,8 @@ function cambioSelezione() {
 	} else if (valoreSelezionato == 'animal') {
 		divContainer.innerHTML = '';
 		console.log('animals');
-		const arrayIconeFiltrate = arrayIcone.filter((iconArgoment) => {
-			if (iconArgoment.type == 'animal') {
+		const arrayIconeFiltrate = arrayIcone.filter((elementoArray) => {
+			if (elementoArray.type == 'animal') {
 				return true;
 			}
 		})
@@ -166,8 +166,8 @@ function cambioSelezione() {
 	} else if (valoreSelezionato == 'vegetable') {
 		divContainer.innerHTML = '';
 		console.log('vegetable');
-		const arrayIconeFiltrate = arrayIcone.filter((iconArgoment) => {
-			if (iconArgoment.type == 'vegetable') {
+		const arrayIconeFiltrate = arrayIcone.filter((elementoArray) => {
+			if (elementoArray.type == 'vegetable') {
 				return true;
 			}
 		})
@@ -182,8 +182,8 @@ function cambioSelezione() {
 	} else {
 		divContainer.innerHTML = '';
 		console.log('user');
-		const arrayIconeFiltrate = arrayIcone.filter((iconArgoment) => {
-			if (iconArgoment.type == 'user') {
+		const arrayIconeFiltrate = arrayIcone.filter((elementoArray) => {
+			if (elementoArray.type == 'user') {
 				return true;
 			}
 		})
