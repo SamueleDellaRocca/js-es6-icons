@@ -121,7 +121,7 @@ function creaCarta(obj) {
 	let divCard = document.createElement('div');
 	divCard.classList.add('card');
 	divCard.innerHTML = `
-            <div class="icona"><i class="${obj.family} ${obj.prefix}${obj.name}" style="color:${obj.color}"></i></div>
+            <div class="icona"><i class="${obj.family} ${obj.prefix}${obj.name}" style="color:${coloreRandom()}"></i></div>
             <h5 class="titolo">${obj.name}</h5>
 	`
 	divContainer.append(divCard);
@@ -197,4 +197,21 @@ function cambioSelezione() {
 
 	}
 
+}
+
+function coloreRandom() {
+	// FUNZIONE PER GENERARE UN NUMERO RANDOM
+	function numeriRandom(min, max) {
+		return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+	// CREO UN ARRAY DI 3 NUMERI RANDOM DA 0 A 255
+	const arrayNumeriColori = [];
+	for (let index = 0; index < 3; index++) {
+		let numeroRandom = numeriRandom(0, 255);
+		arrayNumeriColori.push(numeroRandom);
+	}
+
+	let color = `rgba(${arrayNumeriColori[0]},${arrayNumeriColori[1]},${arrayNumeriColori[2]})`
+
+	return color;
 }
